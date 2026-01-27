@@ -10,6 +10,7 @@ export default /** @type import('electron-builder').Configuration */
       "node_modules/@dbmate/**",
       "node_modules/@app/main/dist/migrations/**",
     ],
+    linux: { target: ['AppImage'] },
     artifactName: '${productName}-${version}-${os}-${arch}.${ext}',
     files: [
       'LICENSE*',
