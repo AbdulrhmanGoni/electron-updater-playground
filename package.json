@@ -1,0 +1,39 @@
+{
+  "name": "electron-updater-playground",
+  "description": "A simple electron app for testing purposes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://github.com/AbdulrhmanGoni/electron-updater-playground",
+  "license": "MIT",
+  "author": {
+    "email": "abdulrhmangoni@gmail.com",
+    "name": "Abdulrhman Goni",
+    "url": "https://github.com/AbdulrhmanGoni"
+  },
+  "main": "packages/entry-point.mjs",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "bun run --filter '*' build",
+    "compile": "bun run build && electron-builder build --config electron-builder.mjs",
+    "start": "bun packages/dev-mode.js",
+    "typecheck": "bun run --filter '*' typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.3",
+    "electron": "40.0.0",
+    "electron-builder": "26.4.1",
+    "glob": "^13.0.0",
+    "vite": "6.3.5"
+  },
+  "dependencies": {
+    "@app/main": "workspace:*",
+    "@app/preload": "workspace:*",
+    "@app/renderer": "workspace:*"
+  }
+}
