@@ -1,20 +1,18 @@
 import './style.css'
-import { setupCounter } from './counter.js'
+import { updateHandler } from './updateHandler.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
     <h1>Hello Vite! 1</h1>
     <div class="card">
-      <button id="counter" type="button"></button>
+      <button id="update-button" type="button">
+        Check for updates
+      </button>
+      <p id="update-status"></p>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
   </div>
 `
-const button = document.querySelector('#counter')
-setupCounter(button)
 
-button.addEventListener('click', () => {
-  console.log('button clicked')
-})
+const updateButton = document.querySelector('#update-button')
+const statusP = document.querySelector('#update-status')
+updateHandler(updateButton, statusP)
