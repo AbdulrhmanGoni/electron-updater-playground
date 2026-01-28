@@ -36,7 +36,12 @@ export function updateHandler(updateButton, statusP, notesDiv) {
             notesDiv.innerHTML = result.updateInfo.releaseNotes.map(
               (note) => (
                 `<div>
-                  <p style="font-weight: bold; font-size: 22px;">${note.version}</p>
+                  <p style="font-weight: bold; font-size: 22px;">
+                    ${note.version}
+                    <span style="font-size: 14px; color: gray; transform: translateY(-4px); display: inline-block;">
+                      ${note.version === result.updateInfo.version ? '(Latest)' : ''}
+                    </span>
+                  </p>
                   ${note.note}
                 </div>`
               )
