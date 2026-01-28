@@ -3,7 +3,7 @@ import { updateHandler } from './updateHandler.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <h1>Hello Vite! 1</h1>
+    <h1>Hello Vite!</h1>
     <div class="card">
       <button id="update-button" type="button">
         Check for updates
