@@ -28,6 +28,7 @@ class WindowManager implements AppModule {
       height: 800,
       width: 1400,
       webPreferences: {
+        devTools: true,
         nodeIntegration: false,
         contextIsolation: true,
         sandbox: false,

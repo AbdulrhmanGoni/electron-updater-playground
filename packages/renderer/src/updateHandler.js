@@ -1,6 +1,6 @@
 import { appUpdater } from '@app/preload'
 
-export function updateHandler(updateButton, statusP) {
+export function updateHandler(updateButton, statusP, notesDiv) {
   let status = {
     currentStatus: 'checking',
     downloaded: false,
@@ -33,6 +33,14 @@ export function updateHandler(updateButton, statusP) {
             setStatus({ updateInfo: result.updateInfo })
             updateButton.textContent = 'Download update'
             statusP.textContent = `Update available (v${result.updateInfo.version})`
+            notesDiv.innerHTML = result.updateInfo.releaseNotes.map(
+              (note) => (
+                `<div>
+                  <p style="font-weight: bold; font-size: 22px;">${note.version}</p>
+                  ${note.note}
+                </div>`
+              )
+            ).join('')
           } else {
             setStatus({ updateInfo: null })
             updateButton.textContent = 'Check for updates'

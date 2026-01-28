@@ -8,11 +8,13 @@ document.querySelector('#app').innerHTML = `
       <button id="update-button" type="button">
         Check for updates
       </button>
-      <p id="update-status"></p>
+      <p id="update-status" style="margin-top: 10px;"></p>
+      <div id="update-notes" style="margin-top: 10px; display: flex; flex-direction: column; gap: 12px; max-width: 500px;"></div>
     </div>
   </div>
 `
 
 const updateButton = document.querySelector('#update-button')
 const statusP = document.querySelector('#update-status')
-updateHandler(updateButton, statusP)
+const notesDiv = document.querySelector('#update-notes')
+updateHandler(updateButton, statusP, notesDiv)
