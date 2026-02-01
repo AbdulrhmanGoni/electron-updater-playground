@@ -4,13 +4,14 @@ import { metadata } from '@app/preload'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <h1>Hello Vite! v${metadata.appVersion}</h1>
+    <h1>Hello Vite!</h1>
+    <h3>Current version: ${metadata.appVersion}</h3>
     <div class="card">
       <button id="update-button" type="button">
         Check for updates
       </button>
-      <p id="update-status" style="margin-top: 10px;"></p>
-      <div id="update-notes" style="margin-top: 10px; display: flex; flex-direction: column; gap: 12px; max-width: 500px;"></div>
+      <p id="update-status"></p>
+      <div id="update-notes"></div>
     </div>
   </div>
 `

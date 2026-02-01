@@ -33,7 +33,8 @@ export function updateHandler(updateButton, statusP, notesDiv) {
             setStatus({ updateInfo: result.updateInfo })
             updateButton.textContent = 'Download update'
             statusP.textContent = `Update available (v${result.updateInfo.version})`
-            notesDiv.innerHTML = result.updateInfo.releaseNotes.map(
+            notesDiv.innerHTML = "<h3>Release Notes</h3>";
+            notesDiv.innerHTML += result.updateInfo.releaseNotes.map(
               (note) => (
                 `<div>
                   <p style="font-weight: bold; font-size: 22px;">
