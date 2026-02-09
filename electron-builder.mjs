@@ -12,6 +12,7 @@ export default /** @type import('electron-builder').Configuration */
     ],
     linux: { target: ['AppImage'] },
     artifactName: '${productName}-${version}-${os}-${arch}.${ext}',
+    generateUpdatesFilesForAllChannels: true,
     files: [
       'LICENSE*',
       pkg.main,
