@@ -4,7 +4,7 @@ import { metadata } from '@app/preload'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <h1>Hello Vite!</h1>
+    <h1>Hello Pre-release!</h1>
     <h3>Current version: ${metadata.appVersion}</h3>
     <div class="card">
       <button id="update-button" type="button">
