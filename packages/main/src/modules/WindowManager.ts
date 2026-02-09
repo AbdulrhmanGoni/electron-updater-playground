@@ -61,7 +61,6 @@ class WindowManager implements AppModule {
     autoUpdater.autoDownload = false;
     autoUpdater.fullChangelog = true;
     autoUpdater.allowPrerelease = true;
-    autoUpdater.channel = 'beta';
 
     autoUpdater.on('download-progress', (progressInfo) => {
       browserWindow.webContents.send('downloading-update-progress', progressInfo)

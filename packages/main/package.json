@@ -14,12 +14,13 @@
   "dependencies": {
     "@app/preload": "workspace:*",
     "@app/renderer": "workspace:*",
-    "electron-updater": "6.8.2"
+    "semver": "7.7.3"
   },
   "devDependencies": {
     "@app/electron-versions": "workspace:*",
     "electron-devtools-installer": "3.2.0",
     "typescript": "5.8.3",
-    "vite": "6.3.5"
+    "vite": "6.3.5",
+    "@types/semver": "^7.7.1"
   }
 }
