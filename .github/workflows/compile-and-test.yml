@@ -31,6 +31,9 @@ jobs:
       - name: Build the app
         run: bun run compile -- -p never
 
+      - name: Install Playwright dependencies
+        run: bunx playwright install-deps
+
       - name: Take screenshot
         run: xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- node screenshotsTest.ts
 

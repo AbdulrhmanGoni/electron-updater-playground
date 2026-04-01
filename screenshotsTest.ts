@@ -3,9 +3,9 @@ import { globSync } from 'glob';
 
 process.env.PLAYWRIGHT_TEST = 'true';
 
-let executablePattern = 'dist/electron-updater-playground-*.AppImage';
+const executablePath = globSync('dist/linux-unpacked/electron-updater-playground')[0] 
+    || globSync('dist/electron-updater-playground-*.AppImage')[0];
 
-const [executablePath] = globSync(executablePattern);
 if (!executablePath) {
     throw new Error('App Executable path not found. Please compile the app first using: npm run compile');
 }
